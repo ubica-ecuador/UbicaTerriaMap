@@ -1,12 +1,17 @@
 import ReactDOM from "react-dom";
 import RedBox from "redbox-react";
 import React from "react";
+import i18n from "../locale/i18n";
+import { I18nextProvider } from "react-i18next";
 
 export default function renderUi(terria, allBaseMaps, viewState) {
   let render = () => {
     const UI = require("./UserInterface").default;
     ReactDOM.render(
-      <UI terria={terria} allBaseMaps={allBaseMaps} viewState={viewState} />,
+      <I18nextProvider i18n={i18n}>
+        <UI terria={terria} allBaseMaps={allBaseMaps} viewState={viewState} />
+      </I18nextProvider>,
+
       document.getElementById("ui")
     );
   };

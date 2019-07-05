@@ -5,14 +5,14 @@ import MenuPanel from "terriajs/lib/ReactViews/StandardUserInterface/customizabl
 import PanelStyles from "terriajs/lib/ReactViews/Map/Panels/panel.scss";
 import Styles from "./related-maps.scss";
 import classNames from "classnames";
-import { Trans } from "react-i18next";
+import { useTranslation } from "react-i18next";
 
 function RelatedMaps(props) {
   const dropdownTheme = {
     inner: Styles.dropdownInner,
     icon: "gallery"
   };
-
+  const { t, i18n } = useTranslation();
   return (
     <MenuPanel
       theme={dropdownTheme}
@@ -25,8 +25,11 @@ function RelatedMaps(props) {
         <label className={PanelStyles.heading}>Related Maps</label>
       </div>
 
-      <p>Clicking on a map below will open it in a separate window or tab.</p>
-      <Trans>Welcome to React</Trans>
+      <p>
+        Clicking on a map below will open it in a separate window or tab.
+        {t("Welcome to React")}{" "}
+      </p>
+
       <div className={classNames(PanelStyles.section, Styles.section)}>
         <a target="_blank" href="http://nationalmap.gov.au/renewables/">
           <img
