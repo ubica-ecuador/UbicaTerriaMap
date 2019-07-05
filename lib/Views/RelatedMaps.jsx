@@ -5,6 +5,7 @@ import MenuPanel from "terriajs/lib/ReactViews/StandardUserInterface/customizabl
 import PanelStyles from "terriajs/lib/ReactViews/Map/Panels/panel.scss";
 import Styles from "./related-maps.scss";
 import classNames from "classnames";
+import { Trans } from "react-i18next";
 
 function RelatedMaps(props) {
   const dropdownTheme = {
@@ -25,7 +26,7 @@ function RelatedMaps(props) {
       </div>
 
       <p>Clicking on a map below will open it in a separate window or tab.</p>
-
+      <Trans>Welcome to React</Trans>
       <div className={classNames(PanelStyles.section, Styles.section)}>
         <a target="_blank" href="http://nationalmap.gov.au/renewables/">
           <img
