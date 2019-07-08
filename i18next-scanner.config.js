@@ -4,7 +4,7 @@ const chalk = require('chalk');
 module.exports = {
     input: [
         'lib/**/*.{js,jsx}',
-        'packages/terriajs/lib/ReactViews/**/*.{js,jsx}',
+        //'packages/terriajs/lib/ReactViews/**/*.{js,jsx}',
         // Use ! to filter out files or directories
         '!lib/**/*.spec.{js,jsx}',
         '!lib/locale/i18n/**',
@@ -38,7 +38,11 @@ module.exports = {
         ],
         defaultLng: 'en',
         defaultNs: 'terriamap',
-        defaultValue: '__STRING_NOT_TRANSLATED__',
+        //defaultValue:'[NO TRANSLATION]',
+        defaultValue: function(lng, ns, key) {
+            return key;
+        },
+    
         resource: {
             loadPath: 'i18n/{{lng}}/{{ns}}.json',
             savePath: 'i18n/{{lng}}/{{ns}}.json',
