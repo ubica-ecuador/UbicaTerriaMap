@@ -3,8 +3,8 @@ const chalk = require('chalk');
 
 module.exports = {
     input: [
-        'lib/**/*.{js,jsx}',
-        //'packages/terriajs/lib/ReactViews/**/*.{js,jsx}',
+        //'lib/**/*.{js,jsx}',
+        'packages/terriajs/lib/ReactViews/**/*.{js,jsx}',
         // Use ! to filter out files or directories
         '!lib/**/*.spec.{js,jsx}',
         '!lib/locale/i18n/**',
